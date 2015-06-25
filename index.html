@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Seller Track</title>
+	<!--<link rel="shortcut icon" href="favicon.ico">-->
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
+	<!--<link rel="stylesheet" href="_assets/css/jqm-demos.css">-->
+    <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">-->
+	<script src="js/jquery.js"></script>
+	<!--<script src="_assets/js/index.js"></script>-->
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <!-- Google map -->
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+</head>
+<body>
+
+
+<!-- page zero -->
+<div data-role="page" id="pagezero">
+  <div data-role="main" class="ui-content">
+    <div style="width:200px; margin:0 auto"><img src="seller.png" alt="Seller"></div>    
+  </div>
+  
+  <script>
+      setTimeout(function (){
+          var ze = document.getElementById("pagezero");
+      }, 5000);
+      window.location.href="#pageone";
+  </script>
+</div>
+
+<!-- page zero -->
+
+<!-- first page district -->
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>Smart Finder</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <form method="post" action="demoform.asp">
+      <fieldset class="ui-field-contain">
+        <label for="day">Select District -  දිස්ත්‍රික්කය තෝරන්න</label>
+        <select name="day" id="day">
+          <option value="amp">Ampara(අම්පාර)</option>
+          <option value="col">Colombo(කොළඹ)</option>
+          <option value="gam">Gampaha(ගම්පහ)</option>
+          <option value="kal">Kaluthara(කළුතර)</option>
+        </select>
+
+
+<script>
+function getOption() {
+    var obj = document.getElementById("day");
+    var obj2 = obj.options[obj.selectedIndex].text;
+    var district1 = obj.options[obj.selectedIndex].value;
+    return [district1,obj2];
+}
+</script>
+
+      </fieldset>
+      <a href="#pagetwo" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide" onclick="getOption()">Next ></a>
+    </form>
+  </div>
+
+
+  <div data-role="main" class="ui-content">
+    <div style="width:200px; margin:0 auto"><img src="seller.png" alt="Seller"></div>    
+  </div>
+
+  <div data-role="footer">
+    <h1>UCSC - Professional Practice &copy 2015</h1>
+  </div>
+</div> 
+<!-- first page -->
+
+<!-- second page -->
+<div data-role="page" id ="pagetwo">
+  <div data-role="header">
+    <h1>Smart Finder</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <form method="post" action="demoform.asp">
+      <fieldset class="ui-field-contain">
+        <label for="day">Select Distance - දුර ප්‍රමාණය</label>
+        <select name="day2" id="day2">
+          <option value="five">5 km</option>
+          <option value="ten">10 km</option>
+        </select>
+
+<script>
+function getOption2() {
+    var obj3 = document.getElementById("day2");
+//    document.getElementById("demo").innerHTML = 
+    var obj4 = obj3.options[obj3.selectedIndex].text;
+    var distance1 = obj3.options[obj3.selectedIndex].value;
+    var a = getOption();
+
+/*    document.getElementById("demo2").innerHTML =
+    " within " + obj4;*/
+    document.getElementById("demo").innerHTML =
+    a[1] +" අවට  "+ obj4 +" දුරින් ඇති විකුණුම්.";
+
+    getlist(distance1,obj4);
+    return [distance1,obj4];
+}
+</script>
+
+      </fieldset>
+      <a href="#pageone" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide" data-direction="reverse">Back</a>
+      <a href="#pagethree" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide" onclick="getOption2()">Next ></a>
+      <!-- <input type="submit" data-inline="true" value="Submit"> -->
+      
+
+    </form>
+  </div>
+
+
+  <div data-role="main" class="ui-content">
+    <div style="width:200px; margin:0 auto"><img src="seller.png" alt="Seller"></div>    
+  </div>
+
+  <div data-role="footer">
+    <h1>UCSC - Professional Practice &copy 2015</h1>
+  </div>
+</div> 
+
+<!-- second page -->
+
+
+<!-- third page items -->
+
+<div data-role="page" id="pagethree">
+  <div data-role="main" class="ui-content">
+  <a align= "center" href="#pagetwo" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide" data-direction="reverse">Back</a>
+
+    
+    <h2 id="demo"></h2>
+    <form class="ui-filterable">
+      <input id="myFilter" data-type="search">
+    </form>
+    <ul id="results" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
+<!--       <li><a href="#pagefour">Arthapal අර්තාපල්</a></li>
+      <li><a href="#">Anamalu ආනමාලු </a></li>
+      <li><a href="#">Bandakka බණ්ඩක්කා</a></li>
+      <li><a href="#">Carrot කැරට්</a></li>
+      <li><a href="#">Karawala කරවල</a></li>
+      <li><a href="#pagefour" onclick="getOption3("kankun")">Kankun කන්කුන්</a></li>
+      <li><a href="#" onclick="getOption3("kankun")">Calvin</a></li>
+ -->
+      
+    </ul>
+
+
+  </div>
+
+  <div data-role="footer">    
+    <h1>UCSC - Professional Practice &copy 2015</h1>
+  </div>
+
+<script>
+
+
+function getlist(dist,dist1) {//
+
+  //var item = awa;
+  //var dist = getOption2();
+  var distr = getOption();
+
+  function makeUL(array) {
+    // Create the list element:
+    var n = (array.length);
+    var kk="";
+
+    for(i = 0; i <= (n-1); i++)
+    {
+        var list = array[i];
+        //kk += "<li>"+list+"</li>"
+        kk += "<li>"+"<a href='#pagefour'onclick="+getOption3(list[1])+" >"+list[0]+"</a>"+"</li>" //onclick="+getOption3(list[1])+"
+    }
+
+    var MyList = document.getElementById('results');
+    MyList.innerHTML = kk;
+  }//makeUL
+
+
+
+  if (dist =='five') {//5km
+    
+    if (distr[0]=='amp') {      
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      //document.getElementById('foo').appendChild(makeUL(options));
+      makeUL(options);
+    }else if (distr[0]=='kal') {    
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='gam'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else{
+          //document.getElementById("myPopupDialog").innerHTML = 56; 
+    }
+  }else{  //10km
+
+  }
+
+}
+</script>
+</div> 
+
+<!-- third page -->
+
+<!-- fourth page map -->
+<div data-role="page" id ="pagefour">
+  <div data-role="header">
+    <h1>Smart Finder</h1>
+  </div>
+
+  <a align= "center" href="#pagefour" class="ui-btn ui-btn-inline ui-corner-all" onclick="locat()">Show Map</a>
+  <div data-role="main" class="ui-content">
+
+    <div id="googleMap" style="width:100%;height:380px;">
+ 
+
+<script>
+function getOption3(list){
+  bandaya = list;
+  //alert(name);
+  //return name;
+}
+
+function locat(){
+
+var na = getOption();
+name = na[0];
+//alert(getOption()[0]);
+
+if (name == 'amp'){
+    locations = [['Iginiyagala Rd',7.282907, 81.648964],['Uhana Maha Oya',7.311682, 81.668533],['Siyambalanduwa',7.291250, 81.687416],['Karativ Rd',7.296699, 81.701835]];
+ /* window.locations = [
+  ['Bondi Beach', 7.295805, 81.700033, 4],
+  ['Coogee Beach', 7.289505, 81.689218, 5],
+  ['Cronulla Beach', 7.272519, 81.695398, 3],
+  ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+  ['Maroubra Beach', -33.950198, 151.259302, 1]
+];*/
+
+}else if(name == 'gam'){
+  locations = [['Temple Rd',7.093390, 79.978496],['Vishaka Rd',7.087513, 79.991971],['Ja-ela rd',7.089131, 80.023986],['Bemmulla rd',7.099267, 80.013858]];
+}else if(name == 'kal'){
+  locations = [['Adikarigoda',6.605439, 79.986702],['Riverside',6.592735, 79.971253],['De Alwis Rd',6.579008, 79.965674]];
+}else if(name == 'col'){
+  locations = [['Kinda canal',6.890958, 79.883339],['Gothami Rd',6.915839, 79.887201],['Marys Rd',6.880903, 79.857332],['Ketawalamulla',6.929557, 79.871923]];
+}else{
+  locations = [];
+}
+
+/*locations =[
+  ['Bondi Beach', 7.295805, 81.700033, 4],
+  ['Coogee Beach', 7.289505, 81.689218, 5],
+  ['Cronulla Beach', 7.272519, 81.695398, 3],
+  ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+  ['Maroubra Beach', -33.950198, 151.259302, 1]
+];*/
+var map = new google.maps.Map(document.getElementById('googleMap'), {
+  zoom: 07,
+  center: new google.maps.LatLng(7.295805, 81.700033),//7.632284, 80.689356
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+});
+
+var infowindow = new google.maps.InfoWindow();
+var marker, i;
+
+for (i = 0; i < locations.length; i++) {  
+  marker = new google.maps.Marker({
+    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+    map: map
+  });
+  google.maps.event.addListener(marker, 'click', (function(marker, i) {
+    return function() {
+      infowindow.setContent(locations[i][0]);
+      infowindow.open(map, marker);
+    }
+  })(marker, i));
+}}
+</script>
+     
+
+    </div>
+  </div>
+
+  <div data-role="footer">
+    <h1><a href="#pagethree" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide" data-direction="reverse">Back</a>UCSC - Professional Practice &copy 2015</h1>
+  </div>
+</div> 
+
+
+<!-- fourth page -->
+
+</body>
+</html>
