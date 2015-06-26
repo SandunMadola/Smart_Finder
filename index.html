@@ -18,16 +18,20 @@
 
 
 <!-- page zero -->
-<div data-role="page" id="pagezero">
+<div data-role="page" id="pagezero" bgcolor="#E6E6FA">
   <div data-role="main" class="ui-content">
     <div style="width:200px; margin:0 auto"><img src="seller.png" alt="Seller"></div>    
+    <div style="width:200px; margin:0 auto"><h2 color="white"> Smart Finder </h2></div>
   </div>
   
   <script>
+    function delay(){
       setTimeout(function (){
-          var ze = document.getElementById("pagezero");
-      }, 5000);
-      window.location.href="#pageone";
+          window.location.href="#pageone";          
+      }, 1500);
+    }
+    delay();
+      
   </script>
 </div>
 
@@ -82,7 +86,7 @@ function getOption() {
 </script>
 
       </fieldset>
-      <a href="#pagetwo" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide" onclick="getOption()">Next ></a>
+      <a href="#pagetwo" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide" onclick="getOption()">Next ></a>      
     </form>
   </div>
 
