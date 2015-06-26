@@ -18,17 +18,18 @@
 
 
 <!-- page zero -->
-<div data-role="page" id="pagezero" bgcolor="#E6E6FA">
+<div data-role="page" id="pa">
   <div data-role="main" class="ui-content">
     <div style="width:200px; margin:0 auto"><img src="seller.png" alt="Seller"></div>    
-    <div style="width:200px; margin:0 auto"><h2 color="white"> Smart Finder </h2></div>
+    <div style="width:200px; margin:0 auto"><h2> Smart Finder</h2></div>
+    <div style="width:200px; margin:0 auto"><h7>UCSC - Professional Practice &copy 2015</h7></div>
   </div>
-  
+
   <script>
     function delay(){
       setTimeout(function (){
           window.location.href="#pageone";          
-      }, 1500);
+      }, 3000);
     }
     delay();
       
@@ -36,6 +37,34 @@
 </div>
 
 <!-- page zero -->
+<!-- page aboutus -->
+<div data-role="page" id="aboutus">
+  <div data-role="header">
+    <h1>Smart Finder</h1>
+  </div>
+  
+  <div data-role="main" class="ui-content">
+    <a href="#pageone" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide" onclick="getOption()">Home</a>      
+    <h2>About US</h2>
+    <p>
+      We are Undergraduates of University of Colombo School of Computing. This application is created under professional practice course 
+      as a charity project.
+    </p>
+    <p>
+      This application is for both vendors and farmers. This applicatoin supports farmers to indicate themselves easily identify for the
+      vendors. This application supports sinhala fonts and it is very easy to read for local users.
+    </p>
+    <p>
+      This application named as "smart finder" and there are three developers of this application. Sandun , Menuka and Thamail are the team members of this application. Our main aim is to support both vendors and farmers to easily do their task.
+    </p>
+  </div>
+  <div data-role="footer">
+    <h1>UCSC - Professional Practice &copy 2015</h1>
+  </div>
+
+</div>
+
+<!-- page aboutus -->
 
 <!-- first page district -->
 <div data-role="page" id="pageone">
@@ -96,7 +125,7 @@ function getOption() {
   </div>
 
   <div data-role="footer">
-    <h1>UCSC - Professional Practice &copy 2015</h1>
+    <h1><a href = "#aboutus">UCSC - Professional Practice &copy 2015</a></h1>
   </div>
 </div> 
 <!-- first page -->
@@ -160,26 +189,13 @@ function getOption2() {
 
 <div data-role="page" id="pagethree">
   <div data-role="main" class="ui-content">
-  <a align= "center" href="#pagetwo" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide" data-direction="reverse">Back</a>
-
-    
+  <a href="#pagetwo" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide" data-direction="reverse">Back</a> 
     <h2 id="demo"></h2>
     <form class="ui-filterable">
       <input id="myFilter" data-type="search">
     </form>
-    <ul id="results" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
-<!--       <li><a href="#pagefour">Arthapal අර්තාපල්</a></li>
-      <li><a href="#">Anamalu ආනමාලු </a></li>
-      <li><a href="#">Bandakka බණ්ඩක්කා</a></li>
-      <li><a href="#">Carrot කැරට්</a></li>
-      <li><a href="#">Karawala කරවල</a></li>
-      <li><a href="#pagefour" onclick="getOption3("kankun")">Kankun කන්කුන්</a></li>
-      <li><a href="#" onclick="getOption3("kankun")">Calvin</a></li>
- -->
-      
+    <ul id="results" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">    
     </ul>
-
-
   </div>
 
   <div data-role="footer">    
@@ -187,7 +203,6 @@ function getOption2() {
   </div>
 
 <script>
-
 
 function getlist(dist,dist1) {//
 
@@ -216,29 +231,29 @@ function getlist(dist,dist1) {//
   if (dist =='five') {//5km
     
     if (distr[0]=='amp') {      
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Duriyan දුරියන්','duriyan'],['Karawala කරවල','karawala']];
       //document.getElementById('foo').appendChild(makeUL(options));
       makeUL(options);
     }else if (distr[0]=='anu') {    
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Anamalu ආනමාලු','anamalu'],['Carrot කැරට්','carrot'],['Duriyan දුරියන්','duriyan'],['Karawala කරවල','karawala'],['Karapincha කරපිංචා','karapincha']];
       makeUL(options);
     }else if(distr[0]=='bad'){
       var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
       makeUL(options);
-    }###else if(distr[0]=='bat'){
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+    }else if(distr[0]=='bat'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala'],['Karapincha කරපිංචා','karapincha']];
       makeUL(options);
     }else if(distr[0]=='col'){
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala'],['Karapincha කරපිංචා','karapincha']];
       makeUL(options);
     }else if(distr[0]=='gal'){
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala'],['Karapincha කරපිංචා','karapincha']];
       makeUL(options);
     }else if(distr[0]=='gam'){
       var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='ham'){
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Duriyan දුරියන්','duriyan'],['Karapincha කරපිංචා','karapincha'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='jaf'){
       var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
@@ -247,40 +262,40 @@ function getlist(dist,dist1) {//
       var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='kan'){
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Duriyan දුරියන්','duriyan'],['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='keg'){
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karapincha කරපිංචා','karapincha']];
       makeUL(options);
     }else if(distr[0]=='kil'){
       var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='kur'){
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Anamalu ආනමාලු','anamalu'],['Karapincha කරපිංචා','karapincha'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='man'){
       var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='mat'){
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Duriyan දුරියන්','duriyan'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='mata'){
       var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='mon'){
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Karapincha කරපිංචා','karapincha'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='mul'){
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Karapincha කරපිංචා','karapincha'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='nuw'){
       var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='pol'){
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Duriyan දුරියන්','duriyan'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='put'){
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Duriyan දුරියන්','duriyan'],['Anamalu ආනමාලු','anamalu'],['Karapincha කරපිංචා','karapincha'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='rat'){
       var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
@@ -289,15 +304,94 @@ function getlist(dist,dist1) {//
       var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
       makeUL(options);
     }else if(distr[0]=='vav'){
-      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      var options = [['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala'],['Karapincha කරපිංචා','karapincha']];
       makeUL(options);
     }
     else{
           //document.getElementById("myPopupDialog").innerHTML = 56; 
     }
-  }else{  //10km
-
-  }
+  }else{//10km          
+    if (distr[0]=='amp') {      
+      var options = [['Aligatapera අලිගැටපේර','aligatapera'],['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Duriyan දුරියන්','duriyan'],['Karawala කරවල','karawala'],['Rambutan රඹුටන්','rambutan']];
+      //document.getElementById('foo').appendChild(makeUL(options));
+      makeUL(options);
+    }else if (distr[0]=='anu') {    
+      var options = [['Aligatapera අලිගැටපේර','aligatapera'],['Anamalu ආනමාලු','anamalu'],['Carrot කැරට්','carrot'],['Duriyan දුරියන්','duriyan'],['Karawala කරවල','karawala'],['Karapincha කරපිංචා','karapincha'],['Rambutan රඹුටන්','rambutan']];
+      makeUL(options);
+    }else if(distr[0]=='bad'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='bat'){
+      var options = [['Aligatapera අලිගැටපේර','aligatapera'],['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala'],['Karapincha කරපිංචා','karapincha']];
+      makeUL(options);
+    }else if(distr[0]=='col'){
+      var options = [['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala'],['Karapincha කරපිංචා','karapincha']];
+      makeUL(options);
+    }else if(distr[0]=='gal'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala'],['Karapincha කරපිංචා','karapincha'],['Rambutan රඹුටන්','rambutan']];
+      makeUL(options);
+    }else if(distr[0]=='gam'){
+      var options = [['Aligatapera අලිගැටපේර','aligatapera'],['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala'],['Rambutan රඹුටන්','rambutan']];
+      makeUL(options);
+    }else if(distr[0]=='ham'){
+      var options = [['Aligatapera අලිගැටපේර','aligatapera'],['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Duriyan දුරියන්','duriyan'],['Karapincha කරපිංචා','karapincha'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='jaf'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='kal'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala'],['Rambutan රඹුටන්','rambutan']];
+      makeUL(options);
+    }else if(distr[0]=='kan'){
+      var options = [['Duriyan දුරියන්','duriyan'],['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='keg'){
+      var options = [['Aligatapera අලිගැටපේර','aligatapera'],['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karapincha කරපිංචා','karapincha'],['Rambutan රඹුටන්','rambutan']];
+      makeUL(options);
+    }else if(distr[0]=='kil'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='kur'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Karapincha කරපිංචා','karapincha'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala'],['Rambutan රඹුටන්','rambutan']];
+      makeUL(options);
+    }else if(distr[0]=='man'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='mat'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Duriyan දුරියන්','duriyan'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='mata'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala'],['Rambutan රඹුටන්','rambutan']];
+      makeUL(options);
+    }else if(distr[0]=='mon'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Karapincha කරපිංචා','karapincha'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='mul'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Karapincha කරපිංචා','karapincha'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='nuw'){
+      var options = [['Aligatapera අලිගැටපේර','aligatapera'],['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='pol'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Duriyan දුරියන්','duriyan'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='put'){
+      var options = [['Duriyan දුරියන්','duriyan'],['Anamalu ආනමාලු','anamalu'],['Karapincha කරපිංචා','karapincha'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='rat'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='tri'){
+      var options = [['Anamalu ආනමාලු','anamalu'],['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala']];
+      makeUL(options);
+    }else if(distr[0]=='vav'){
+      var options = [['Bandakka බණ්ඩක්කා','bandakka'],['Carrot කැරට්','carrot'],['Karawala කරවල','karawala'],['Karapincha කරපිංචා','karapincha']];
+      makeUL(options);
+    }
+    else{
+          //document.getElementById("myPopupDialog").innerHTML = 56; 
+    }
+  }//10km
 
 }
 </script>
@@ -311,7 +405,12 @@ function getlist(dist,dist1) {//
     <h1>Smart Finder</h1>
   </div>
 
-  <a align= "center" href="#pagefour" class="ui-btn ui-btn-inline ui-corner-all" onclick="locat()">Show Map</a>
+  <div data-role="main" class="ui-content">
+    <a href="#pagefour" class="ui-btn ui-btn-inline ui-corner-all" onclick="locat()">Map</a>  
+    <a href="#pagethree" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide" data-direction="reverse">Back</a>
+    <a href="#pageone" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide" onclick="getOption()">Home</a>  
+  </div>
+  
   <div data-role="main" class="ui-content">
 
     <div id="googleMap" style="width:100%;height:380px;">
@@ -332,14 +431,6 @@ name = na[0];
 
 if (name == 'amp'){
     locations = [['Iginiyagala Rd',7.282907, 81.648964],['Uhana Maha Oya',7.311682, 81.668533],['Siyambalanduwa',7.291250, 81.687416],['Karativ Rd',7.296699, 81.701835]];
- /* window.locations = [
-  ['Bondi Beach', 7.295805, 81.700033, 4],
-  ['Coogee Beach', 7.289505, 81.689218, 5],
-  ['Cronulla Beach', 7.272519, 81.695398, 3],
-  ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-  ['Maroubra Beach', -33.950198, 151.259302, 1]
-];*/
-
 }else if(name == 'gam'){
   locations = [['Temple Rd',7.093390, 79.978496],['Vishaka Rd',7.087513, 79.991971],['Ja-ela rd',7.089131, 80.023986],['Bemmulla rd',7.099267, 80.013858]];
 }else if(name == 'kal'){
@@ -368,12 +459,12 @@ var marker, i;
 
 for (i = 0; i < locations.length; i++) {  
   marker = new google.maps.Marker({
-    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+    position: new google.maps.LatLng(locations[i][1], locations[i][2]),    
     map: map
   });
   google.maps.event.addListener(marker, 'click', (function(marker, i) {
     return function() {
-      infowindow.setContent(locations[i][0]);
+      infowindow.setContent(locations[i][0]);      
       infowindow.open(map, marker);
     }
   })(marker, i));
@@ -385,7 +476,7 @@ for (i = 0; i < locations.length; i++) {
   </div>
 
   <div data-role="footer">
-    <h1><a href="#pagethree" class="ui-btn ui-btn-inline ui-corner-all" data-transition="slide" data-direction="reverse">Back</a>UCSC - Professional Practice &copy 2015</h1>
+    <h1>UCSC - Professional Practice &copy 2015</h1>
   </div>
 </div> 
 
